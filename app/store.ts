@@ -6,10 +6,12 @@ import {
   ThunkAction,
 } from "@reduxjs/toolkit";
 import { authSlice } from "../features/authSlice";
+import { dashboardSlice } from "../features/dashboardSlice";
 import { createWrapper, HYDRATE } from "next-redux-wrapper";
 
 const combinedReducer = combineReducers({
   auth: authSlice.reducer,
+  dashboard: dashboardSlice.reducer,
 });
 
 const reducer: typeof combinedReducer = (
