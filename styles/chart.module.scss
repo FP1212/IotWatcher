@@ -1,0 +1,11 @@
+@use "root";
+
+.chart {
+  @include root.box();
+}
+
+.chart_content {
+  height: 90%;
+  padding-left: 30px;
+  padding-right: 30px;
+}

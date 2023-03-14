@@ -1,0 +1,18 @@
+@use "root";
+
+.drawer_content {
+  @include root.flex_1(100%, inherit, column, left);
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.drawer_logo {
+  @include root.flex_1(18vh, inherit);
+  min-height: 100px;
+  object-fit: contain;
+  direction: inherit;
+  overflow: hidden;
+  img {
+    @include root.box(42px, 42px);
+  }
+}

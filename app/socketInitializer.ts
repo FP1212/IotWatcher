@@ -1,4 +1,4 @@
-import io from "Socket.IO-client";
+import { io } from "Socket.IO-client";
 import { AnyAction, Dispatch } from "redux";
 
 export const socketHandler = async (
@@ -20,5 +20,5 @@ export const socketHandler = async (
   });
 
   // socket disconnet onUnmount if exists
-  if (socket) return () => socket.disconnect();
+  //if (socket) return () => socket.disconnect();
 };

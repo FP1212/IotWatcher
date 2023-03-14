@@ -28,7 +28,13 @@ export default function handler(
     res.socket.server.io = io;
 
     setInterval(() => {
-      io.emit("message", new Date().toString());
+      io.emit("message", {
+        cards: [
+          [{ unit: "T", value: Math.random() * 50 }],
+          [{ unit: "T", value: Math.random() * 50 }],
+        ],
+        message: new Date(),
+      });
     }, 5000);
   }
   res.end();

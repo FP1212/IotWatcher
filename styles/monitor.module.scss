@@ -1,0 +1,51 @@
+@use "root";
+
+$box-row: row;
+$box-col: column;
+$max-width: 100%;
+
+@mixin col-view() {
+  flex-direction: $box-col;
+  overflow: scroll;
+}
+
+.monitor_title {
+  width: $max-width;
+  height: 3%;
+}
+
+.monitor {
+  @include root.flex_1(100%, 100%, $box-row, flex-start, space-between);
+  padding-left: 25px;
+  padding-right: 25px;
+  /* Extra small devices (phones, 600px and down) */
+  @media screen and (max-width: 1000px) {
+    @include root.flex_1(100%, 100%, $box-col, flex-start, normal);
+    overflow: scroll;
+  }
+}
+
+.monitor_col_left {
+  @include root.flex_1(100%, 50%,"column","start");
+  /* Extra small devices (phones, 600px and down) */
+  @media screen and (max-width: 1000px) {
+    @include root.flex_1(100%, 100%);
+  }
+}
+
+.monitor_col_right {
+  @include root.flex_1(100%, 50%, $box-col,"","start");
+  min-height: 60%;
+  padding: 10px;
+  margin-right: 1vw;
+  /* Extra small devices (phones, 600px and down) */
+  @media screen and (max-width: 1000px) {
+    @include root.flex_1(100%, 100%, $box-col);
+  }
+}
+
+.monitor_col_right_card {
+  width: $max-width;
+  height: 43%;
+  margin: 5px;
+}

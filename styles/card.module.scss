@@ -1,0 +1,55 @@
+@use "root";
+
+.card {
+  @include root.flex_1(100%, 100%, column);
+  overflow: hidden;
+}
+
+.card_content {
+  @include root.flex_1(95%, root.$default-width);
+}
+
+.card_stack_width {
+  @include root.flex_1(root.$default-height, root.$medium-width);
+  div {
+    @include root.box(inherit, 20%);
+  }
+}
+
+.card_stack_content {
+  @include root.box(auto, 50%);
+}
+
+.card_box_content {
+  @include root.flex_1(inherit, 55%);
+}
+
+.card_action {
+  @include root.flex_1(inherit, 100%);
+}
+
+.card_icon_small {
+  @include root.box(100%, 50%);
+  fill: royalblue;
+}
+
+.card_icon_big {
+  @include root.box(100%, 100%);
+  font-size: large;
+  fill: royalblue;
+}
+
+.title_1 {
+  @include root.typography(1.3vw, sans-serif, center, bold, #c4c4c4);
+  font-size-adjust: ex-height 0.58;
+}
+
+.title_2 {
+  @include root.typography(1.2vw, sans-serif, center, bold, #2c2c2c);
+  padding-top: 40px;
+}
+
+.content_1 {
+  @include root.typography(2vw, sans-serif, center, bold, #2c2c2c);
+  margin-top: 4;
+}
