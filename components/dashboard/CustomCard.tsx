@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import { Card, CardContent } from "@mui/material";
 import { selectDashboardState } from "../../features/dashboardSlice";
 import CustomCardHeader from "./CustomCardHeader";
-import ICustomCard from "../../types/ICustomCard";
+import {ICustomCard} from "../../types";
 import styles from "Styles/card.module.scss";
 
 const menuItems = ["Cambiar Color", "Forzar Valor", "Remover"];

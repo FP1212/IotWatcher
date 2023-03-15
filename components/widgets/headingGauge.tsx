@@ -55,7 +55,7 @@ G2.registerShape("point", "triangle-gauge-indicator", {
   },
 });
 
-const HeadingCard = ({ data, index }) => {
+const HeadingGauge = ({ data, index }) => {
   const theme = useTheme();
   const [t] = useTranslation();
   const ref = useRef(null);
@@ -235,4 +235,4 @@ const HeadingCard = ({ data, index }) => {
   );
 };
 
-export default HeadingCard;
+export default HeadingGauge;

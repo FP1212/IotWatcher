@@ -1,5 +1,5 @@
 import React, { useEffect, forwardRef } from "react";
-import { IGridItem } from "../../types/IGridLayout";
+import { IGridItem } from "../../types";
 
 const GridItem = forwardRef<HTMLDivElement,IGridItem>(
   (

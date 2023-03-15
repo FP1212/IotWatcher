@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 import { Line } from "@ant-design/plots";
 import chart_styles from "Styles/chart.module.scss";
 import { useTranslation } from "react-i18next";

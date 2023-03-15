@@ -1,4 +1,6 @@
-export const numberScale = (
+import cardGenerator from "./cardGenerator";
+
+const numberScale = (
   unscaledNumber: number,
   minAllowed: number,
   maxAllowed: number,
@@ -10,3 +12,5 @@ export const numberScale = (
     minAllowed
   );
 };
+
+export { cardGenerator, numberScale };

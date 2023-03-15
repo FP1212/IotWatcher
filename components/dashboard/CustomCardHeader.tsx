@@ -3,7 +3,7 @@ import { CardHeader, IconButton, Menu, MenuItem } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import React, { useMemo, useState } from "react";
 import { useAppDispatch } from "../../app/hooks";
-import ICardHeader from "../../types/ICardHeader";
+import {ICardHeader} from "../../types";
 import styles from "Styles/card.module.scss";
 
 interface CardHeaderState {

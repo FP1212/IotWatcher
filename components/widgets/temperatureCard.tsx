@@ -1,8 +1,7 @@
 import React from "react";
 import { Slider, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { numberScale } from "../../utils";
-import ICardContent from "../../types/ICardContent";
+import { ICardContent } from "../../types";
 import { useAppSelector } from "../../app/hooks";
 
 function preventHorizontalKeyboardNavigation(
@@ -41,7 +40,9 @@ const TemperatureCard = ({ selector, tab, index }: ICardContent) => {
           },
         }}
         orientation="vertical"
-        value={numberScale(Math.round(data.value), 0, 100, 0, 50)}
+        value={data.value}
+        min={0}
+        max={100}
         aria-label="Temperature"
         onKeyDown={preventHorizontalKeyboardNavigation}
         valueLabelDisplay="on"

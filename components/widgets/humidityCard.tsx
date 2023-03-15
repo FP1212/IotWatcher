@@ -2,8 +2,6 @@ import React, { useRef } from "react";
 import { Liquid } from "@ant-design/plots";
 import { useTheme } from "@mui/material/styles";
 import styles from "Styles/card.module.scss";
-import { useSelector } from "react-redux";
-
 
 const HumidityCard = ({ data, index }) => {
   const theme = useTheme();

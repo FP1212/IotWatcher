@@ -9,6 +9,8 @@ import CustomCard from "../components/dashboard/CustomCard";
 import GridItem from "../components/dashboard/GridItem";
 import TemperatureCard from "../components/widgets/temperatureCard";
 import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
+import { cardGenerator } from "../utils";
+import { type } from "os";
 
 export default function Dashboard() {
   const dispatch: Dispatch<AnyAction> = useAppDispatch();
@@ -19,39 +21,25 @@ export default function Dashboard() {
     <React.Fragment>
       <ButtonAddComponent tab="0" />
       <CustomResponsiveGridLayout>
-        <GridItem ref={ref} key="test" data-grid={{ x: 0, y: 0, w: 2, h: 3 }}>
-          <CustomCard
-            tab={0}
-            index={0}
-            title={"temperature"}
-            date={new Date()}
-            Icon={DeviceThermostatIcon}
+        {["TemperatureCard", "DepthCard"].map((name, i) => (
+          <GridItem
+            ref={ref}
+            key={name}
+            data-grid={{ x: i + 1, y: 0, w: 2, h: 3 }}
           >
-            <TemperatureCard selector={undefined} tab={0} index={0} />
-          </CustomCard>
-        </GridItem>
-        <GridItem ref={ref} key="test2" data-grid={{ x: 2, y: 0, w: 2, h: 3 }}>
-          <CustomCard
-            tab={0}
-            index={0}
-            title={"temperature"}
-            date={new Date()}
-            Icon={DeviceThermostatIcon}
-          >
-            <TemperatureCard selector={undefined} tab={0} index={0} />
-          </CustomCard>
-        </GridItem>
-        <GridItem ref={ref} key="test3" data-grid={{ x: 4, y: 0, w: 2, h: 3 }}>
-          <CustomCard
-            tab={0}
-            index={0}
-            title={"temperature"}
-            date={new Date()}
-            Icon={DeviceThermostatIcon}
-          >
-            <TemperatureCard selector={undefined} tab={0} index={0} />
-          </CustomCard>
-        </GridItem>
+            {cardGenerator(
+              { type: name },
+              {
+                title: name,
+                Icon: DeviceThermostatIcon,
+                tab: 0,
+                index: 0,
+                date: new Date(),
+              },
+              selectDashboardState
+            )}
+          </GridItem>
+        ))}
       </CustomResponsiveGridLayout>
     </React.Fragment>
   );

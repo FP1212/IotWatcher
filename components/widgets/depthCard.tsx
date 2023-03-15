@@ -3,11 +3,12 @@ import { Typography, Stack, Box } from "@mui/material";
 import styles from "Styles/card.module.scss";
 import { useTheme } from "@mui/material/styles";
 import OpacityIcon from "@mui/icons-material/Opacity";
-import { useSelector } from "react-redux";
+import { ICardContent } from "../../types";
+import { useAppSelector } from "../../app/hooks";
 
-
-const DepthCard = (props) => {
-  const { data, index } = props;
+const DepthCard = ({ selector, tab, index }: ICardContent) => {
+  const data: any = useAppSelector(selector({ tab, index }));
+  
   const theme = useTheme();
   return (
     <React.Fragment>
@@ -22,7 +23,8 @@ const DepthCard = (props) => {
             fontSize: 16,
             fontWeight: "500",
             color: theme.palette.text.primary,
-          }}>{`${Number.parseFloat(data.value).toFixed(1)} m`}</Typography>
+          }}
+        >{`${Number.parseFloat(data.value).toFixed(1)} m`}</Typography>
       </Stack>
     </React.Fragment>
   );
